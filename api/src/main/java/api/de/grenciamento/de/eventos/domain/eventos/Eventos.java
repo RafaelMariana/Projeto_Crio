@@ -1,14 +1,12 @@
-package domain.eventos;
+package api.de.grenciamento.de.eventos.domain.eventos;
 
-import domain.usuario.Usuario;
+import api.de.grenciamento.de.eventos.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.UUID;
 

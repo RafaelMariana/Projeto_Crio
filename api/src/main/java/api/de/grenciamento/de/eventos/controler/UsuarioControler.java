@@ -1,12 +1,11 @@
-package controler;
+package api.de.grenciamento.de.eventos.controler;
 
-import domain.usuario.Usuario;
-import domain.usuario.UsuarioRequestDTO;
+import api.de.grenciamento.de.eventos.domain.usuario.Usuario;
+import api.de.grenciamento.de.eventos.domain.usuario.UsuarioRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import service.UsuarioService;
+import api.de.grenciamento.de.eventos.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api/usuario")

@@ -1,13 +1,16 @@
-package service;
+package api.de.grenciamento.de.eventos.service;
 
-import domain.usuario.Usuario;
-import domain.usuario.UsuarioRequestDTO;
+import api.de.grenciamento.de.eventos.domain.usuario.Usuario;
+import api.de.grenciamento.de.eventos.domain.usuario.UsuarioRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import repository.UsuarioRepository;
-
+import org.springframework.stereotype.Service;
+import api.de.grenciamento.de.eventos.repository.UsuarioRepository;
+@Service
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+
 
     public Usuario createUsuario(UsuarioRequestDTO data){
         Usuario newUsuario = new Usuario();

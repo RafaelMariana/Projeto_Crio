@@ -1,4 +1,4 @@
-package domain.usuario;
+package api.de.grenciamento.de.eventos.domain.usuario;
 
 
 import jakarta.persistence.Entity;

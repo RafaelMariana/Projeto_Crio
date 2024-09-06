@@ -1,4 +1,4 @@
-package domain.usuario;
+package api.de.grenciamento.de.eventos.domain.usuario;
 
 public record UsuarioRequestDTO(
         String nomeCompleto,

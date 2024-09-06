@@ -1,4 +1,4 @@
-package domain.convite;
+package api.de.grenciamento.de.eventos.domain.convite;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

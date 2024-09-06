@@ -1,6 +1,6 @@
-package repository;
+package api.de.grenciamento.de.eventos.repository;
 
-import domain.eventos.Eventos;
+import api.de.grenciamento.de.eventos.domain.eventos.Eventos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
