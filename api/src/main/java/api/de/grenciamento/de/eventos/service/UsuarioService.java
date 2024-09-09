@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import api.de.grenciamento.de.eventos.repository.UsuarioRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UsuarioService {
@@ -30,6 +31,7 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public Usuario getUserById() {
+    public Usuario getUserById(UUID id) {
+        return usuarioRepository.findById(id).orElseThrow(()-> new RuntimeException("Usuário não encontrado."));
     }
 }
