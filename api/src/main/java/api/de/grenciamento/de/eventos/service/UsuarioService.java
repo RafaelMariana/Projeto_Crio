@@ -5,6 +5,9 @@ import api.de.grenciamento.de.eventos.domain.usuario.UsuarioRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import api.de.grenciamento.de.eventos.repository.UsuarioRepository;
+
+import java.util.List;
+
 @Service
 public class UsuarioService {
     @Autowired
@@ -21,5 +24,12 @@ public class UsuarioService {
         usuarioRepository.save(newUsuario);
         return newUsuario;
 
+    }
+
+    public List<Usuario> getAllUsers() {
+        return usuarioRepository.findAll();
+    }
+
+    public Usuario getUserById() {
     }
 }

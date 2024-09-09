@@ -7,6 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import api.de.grenciamento.de.eventos.service.UsuarioService;
 
+import java.util.List;
+import java.util.UUID;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioControler {
@@ -23,7 +28,21 @@ public class UsuarioControler {
         Usuario newUsuario = this.usuarioService.createUsuario(ususarioRequestDTO);
         return ResponseEntity.ok(newUsuario);
 
+    }
 
+    @GetMapping
+    public ResponseEntity<List<Usuario>> getAllUsers(){
+         List<Usuario> usuarios = this.usuarioService.getAllUsers();
+         //retorna a lista com todos os usuários
+         return ResponseEntity.ok(usuarios);
 
     }
+    @GetMapping("/{id}")
+        public ResponseEntity<Usuario> getUserById(@PathVariable("id") UUID id){
+            Usuario usuario = this.usuarioService.getUserById();
+            return ResponseEntity.ok(usuario);
+        }
+
+    }
+
 }
