@@ -48,6 +48,12 @@ public class UsuarioControler {
 
 
         }
+        //deletar usuario
+        @DeleteMapping("/{id}")
+        public ResponseEntity<Void> deleteUser(@PathVariable("id")UUID id){
+         this.usuarioService.deleteUser(id);
+         return ResponseEntity.noContent().build();
+        }
 
     }
 
