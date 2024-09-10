@@ -2,15 +2,13 @@ package api.de.grenciamento.de.eventos.controler;
 
 import api.de.grenciamento.de.eventos.domain.usuario.Usuario;
 import api.de.grenciamento.de.eventos.domain.usuario.UsuarioRequestDTO;
+import api.de.grenciamento.de.eventos.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import api.de.grenciamento.de.eventos.service.UsuarioService;
 
 import java.util.List;
 import java.util.UUID;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/api/usuario")
@@ -24,8 +22,8 @@ public class UsuarioControler {
             @RequestParam("email") String email,
             @RequestParam("senha") String senha,
             @RequestParam("tipo") int tipo){
-        UsuarioRequestDTO ususarioRequestDTO = new UsuarioRequestDTO(nomeCompleto,email,senha,tipo);
-        Usuario newUsuario = this.usuarioService.createUsuario(ususarioRequestDTO);
+        UsuarioRequestDTO usuarioRequestDTO = new UsuarioRequestDTO(nomeCompleto,email,senha,tipo);
+        Usuario newUsuario = this.usuarioService.createUsuario(usuarioRequestDTO);
         return ResponseEntity.ok(newUsuario);
 
     }
@@ -39,8 +37,16 @@ public class UsuarioControler {
     }
     @GetMapping("/{id}")
         public ResponseEntity<Usuario> getUserById(@PathVariable("id") UUID id){
-            Usuario usuario = this.usuarioService.getUserById();
+            Usuario usuario = this.usuarioService.getUserById(id);
             return ResponseEntity.ok(usuario);
+        }
+
+        @PutMapping("/{id}")
+        public ResponseEntity<Usuario> updateUser(@PathVariable("id")UUID id,UsuarioRequestDTO usuarioRequestDTO){
+        Usuario updateUsuario = this.usuarioService.updateUser(id,usuarioRequestDTO);
+        return ResponseEntity.ok(updateUsuario);
+
+
         }
 
     }
