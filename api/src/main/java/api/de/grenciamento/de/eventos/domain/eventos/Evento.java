@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.UUID;
 
@@ -16,18 +17,17 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Eventos {
+public class Evento {
     @Id
     @GeneratedValue
     private UUID id;
     private String titulo;
     private String descricao;
-    private LocalTime inicio;
-    private LocalTime fim;
+    private LocalDateTime inicio;
+    private LocalDateTime fim;
     private String local;
-    private int publico_alvo;
     private boolean privado;
-    private boolean organizador;
+
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;

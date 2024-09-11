@@ -5,5 +5,6 @@ public record UsuarioRequestDTO(
         String  email,
         String senha,
         int tipo
+
 ) {
 }
